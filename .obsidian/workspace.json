@@ -41,22 +41,6 @@
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "b1067f2d50ba92a1",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "ef37894bb72f9bf0",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -212,6 +196,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian42-brat:BRAT": false,
       "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -225,10 +210,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b61fa9b5b713454a",
+  "active": "592c3e84572ab5e3",
   "lastOpenFiles": [
-    "2026-02-26.md",
     "常用命令/docker相关.md",
+    "2026-02-26.md",
     "Excalidraw/Drawing 2026-02-26 16.10.01.excalidraw.md",
     "学习记录",
     "会议纪要",
