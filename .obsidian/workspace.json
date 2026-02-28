@@ -59,12 +59,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SKILL/论文相关skill.md",
+                "file": "常用命令/docker相关.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "论文相关skill"
+              "title": "docker相关"
             }
           }
         ],
@@ -240,8 +240,8 @@
   },
   "active": "a54ddfc8330d2bf0",
   "lastOpenFiles": [
-    "未命名.md",
     "SKILL/论文相关skill.md",
+    "未命名.md",
     "未命名 1.md",
     "SKILL",
     "常用命令/docker相关.md",
