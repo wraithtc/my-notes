@@ -21,8 +21,8 @@
                   ]
                 }
               },
-              "icon": "lucide-trello",
-              "title": "未命名看板"
+              "icon": "lucide-ghost",
+              "title": "kanban"
             }
           },
           {
@@ -201,8 +201,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -224,7 +224,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian42-brat:BRAT": false,
       "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -234,8 +233,7 @@
       "command-palette:打开命令面板": false,
       "obsidian-kanban:创建新看板": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "omnisearch:Omnisearch": false
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
   "active": "b783f199b883ced5",
