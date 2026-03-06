@@ -8,63 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2da940a3defa3375",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "未命名看板.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "未命名看板"
-            }
-          },
-          {
-            "id": "592c3e84572ab5e3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "常用命令/docker相关.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "docker相关"
-            }
-          },
-          {
-            "id": "1efae3dc551de30c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "未命名 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "未命名 1"
-            }
-          },
-          {
             "id": "a54ddfc8330d2bf0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "常用命令/docker相关.md",
+                "file": "会议纪要/20260305 华盛昌交流.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "docker相关"
+              "title": "20260305 华盛昌交流"
             }
           },
           {
@@ -78,9 +32,79 @@
               "icon": "lucide-book-up",
               "title": "版本说明 1.12.4"
             }
+          },
+          {
+            "id": "3e297b60d60d022d",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "conflict-files-obsidian-git.md",
+                "bFile": "conflict-files-obsidian-git.md",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: conflict-files-obsidian-git  (Working Tree)"
+            }
+          },
+          {
+            "id": "55277d867cde111a",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: workspace.json  (Working Tree)"
+            }
+          },
+          {
+            "id": "a455b944a1091c31",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".gitignore",
+                "bFile": ".gitignore",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: .gitignore  (Working Tree)"
+            }
+          },
+          {
+            "id": "468e73bd7de54c1a",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "conflict-files-obsidian-git.md",
+                "bFile": "conflict-files-obsidian-git.md",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: conflict-files-obsidian-git  (Working Tree)"
+            }
+          },
+          {
+            "id": "bf0b44c9fc6f60a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -250,10 +274,12 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "d6bc9079db7b5dba",
+  "active": "bf0b44c9fc6f60a1",
   "lastOpenFiles": [
-    "未命名.md",
+    "conflict-files-obsidian-git.md",
+    "会议纪要/20260305 华盛昌交流.md",
     "常用命令/docker相关.md",
+    "未命名.md",
     "SKILL/论文相关skill.md",
     "未命名 1.md",
     "SKILL",
