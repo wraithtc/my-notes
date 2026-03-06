@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="512" height="512" rx="64" fill="url(#bgGradient)"/>
+
+  <!-- 主元素：AI图标 -->
+  <g filter="url(#shadow)">
+    <!-- 代码符号 / </> -->
+    <path d="M100 280 L150 280 L170 260 L170 300" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="110" y="290" fill="#fff" font-family="Monaco, monospace" font-size="32" font-weight="bold">&lt;/&gt;</text>
+
+    <!-- 大脑/AI图标 -->
+    <circle cx="280" cy="256" r="60" fill="#fff" opacity="0.3"/>
+    <circle cx="280" cy="256" r="40" fill="#fff"/>
+    <g fill="#764ba2">
+      <!-- 神经网络连接点 -->
+      <circle cx="260" cy="240" r="6"/>
+      <circle cx="300" cy="240" r="6"/>
+      <circle cx="280" cy="220" r="6"/>
+      <circle cx="260" cy="272" r="6"/>
+      <circle cx="300" cy="272" r="6"/>
+      <circle cx="280" cy="256" r="6"/>
+      <!-- 连接线 -->
+      <line x1="260" y1="240" x2="280" y2="256" stroke-width="3" stroke-linecap="round"/>
+      <line x1="300" y1="240" x2="280" y2="256" stroke-width="3" stroke-linecap="round"/>
+      <line x1="260" y1="272" x2="280" y2="256" stroke-width="3" stroke-linecap="round"/>
+      <line x1="300" y1="272" x2="280" y2="256" stroke-width="3" stroke-linecap="round"/>
+      <line x1="280" y1="220" x2="280" y2="256" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- 书本/学习图标 -->
+    <g transform="translate(360, 180)">
+      <rect x="0" y="0" width="100" height="140" rx="8" fill="#fff" opacity="0.9"/>
+      <line x1="10" y1="30" x2="90" y2="30" stroke="#764ba2" stroke-width="4" stroke-linecap="round"/>
+      <line x1="10" y1="60" x2="90" y2="60" stroke="#764ba2" stroke-width="4" stroke-linecap="round"/>
+      <line x1="10" y1="90" x2="90" y2="90" stroke="#764ba2" stroke-width="4" stroke-linecap="round"/>
+      <line x1="10" y1="120" x2="90" y2="120" stroke="#764ba2" stroke-width="4" stroke-linecap="round"/>
+      <!-- 书页效果 -->
+      <path d="M50 30 Q50 60 50 140" fill="none" stroke="#764ba2" stroke-width="3" stroke-linecap="round"/>
+      <path d="M50 30 Q50 60 50 140" fill="none" stroke="#764ba2" stroke-width="3" stroke-linecap="round" transform="translate(0, 20)"/>
+      <path d="M50 30 Q50 60 50 140" fill="none" stroke="#764ba2" stroke-width="3" stroke-linecap="round" transform="translate(0, 40)"/>
+      <path d="M50 30 Q50 60 50 140" fill="none" stroke="#764ba2" stroke-width="3" stroke-linecap="round" transform="translate(0, 60)"/>
+    </g>
+  </g>
+
+  <!-- 底部文字 -->
+  <text x="256" y="460" text-anchor="middle" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="600" letter-spacing="2">AI学习</text>
+  <text x="256" y="490" text-anchor="middle" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" opacity="0.8">Programming &amp; Technology</text>
+</svg>
