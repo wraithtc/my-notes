@@ -66,9 +66,21 @@
               "icon": "lucide-file",
               "title": "docker相关"
             }
+          },
+          {
+            "id": "d6bc9079db7b5dba",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.4"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -238,7 +250,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b783f199b883ced5",
+  "active": "d6bc9079db7b5dba",
   "lastOpenFiles": [
     "未命名.md",
     "常用命令/docker相关.md",
