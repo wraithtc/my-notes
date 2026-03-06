@@ -181,19 +181,19 @@ typedef struct {
 
 SDK通过回调函数与业务层通信，需要实现以下回调：
 
-| 回调函数 | 说明 |
-|----------|------|
-| `OVD_GetOVDDeviceInfo` | 获取设备信息 |
-| `OVD_GetInterfacesCallback` | 获取网络接口名称 |
-| `OVD_GetGpsInfo` | 获取GPS信息 |
-| `OVD_GetOVDConfigureInfo` | 获取远程配置信息 |
-| `OVC_SetOVDConfigureInfo` | 设置远程配置信息 |
-| `OVD_OVCConnectStatus` | 连接服务器状态回调 |
-| `OVD_ReBootChannel` | 重启通道回调 |
-| `OVD_ReBootDevice` | 重启设备回调 |
-| `OVD_ResetConfiguration` | 恢复默认设置回调 |
-| `OVD_FirmwareBinUpgrade` | 固件升级回调 |
-| `OVD_PTZCmd` | 云台控制回调 |
+| 回调函数                        | 说明        |
+| --------------------------- | --------- |
+| `OVD_GetOVDDeviceInfo`      | 获取设备信息    |
+| `OVD_GetInterfacesCallback` | 获取网络接口名称  |
+| `OVD_GetGpsInfo`            | 获取GPS信息   |
+| `OVD_GetOVDConfigureInfo`   | 获取远程配置信息  |
+| `OVC_SetOVDConfigureInfo`   | 设置远程配置信息  |
+| `OVD_OVCConnectStatus`      | 连接服务器状态回调 |
+| `OVD_ReBootChannel`         | 重启通道回调    |
+| `OVD_ReBootDevice`          | 重启设备回调    |
+| `OVD_ResetConfiguration`    | 恢复默认设置回调  |
+| `OVD_FirmwareBinUpgrade`    | 固件升级回调    |
+| `OVD_PTZCmd`                | 云台控制回调    |
 
 ### AI算法相关结构体
 
