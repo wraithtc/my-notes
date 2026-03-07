@@ -1,0 +1,1 @@
+claude --dangerously-skip-permissions   //跳过权限检查
