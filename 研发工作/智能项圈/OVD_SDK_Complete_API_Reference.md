@@ -37,22 +37,22 @@
 
 ### 流媒体推送
 
-| 函数名 | 功能描述 |
-|--------|----------|
-| `OVD_AVPushStart` | 音视频推送准备（设置音视频格式） |
-| `OVD_AVPushData` | 音视频内容推送 |
-| `OVD_AVPushEnd` | 音视频推送结束 |
-| `OVD_AVParamModify` | 音视频编码参数修改 |
-| `OVD_PointCloudPushStart` | 点云数据推送开始 |
-| `OVD_StartLiveCapture` | 开始实时抓图 |
-| `OVD_StartLiveCaptureEx` | 开始实时抓图（扩展版本） |
-| `OVD_StopLiveCapture` | 停止实时抓图 |
-| `OVD_StopLiveCaptureEx` | 停止实时抓图（扩展版本） |
-| `OVD_StartRecordCapture` | 开始录像抓图 |
-| `OVD_StopRecordCapture` | 停止录像抓图 |
-| `OVD_start_push_AOV` | 开始AOV推送 |
-| `OVD_stop_push_AOV` | 停止AOV推送 |
-| `OVD_check_aov_push_enable` | 检查AOV推送是否启用 |
+| 函数名                         | 功能描述             |
+| --------------------------- | ---------------- |
+| `OVD_AVPushStart`           | 音视频推送准备（设置音视频格式） |
+| `OVD_AVPushData`            | 音视频内容推送          |
+| `OVD_AVPushEnd`             | 音视频推送结束          |
+| `OVD_AVParamModify`         | 音视频编码参数修改        |
+| `OVD_PointCloudPushStart`   | 点云数据推送开始         |
+| `OVD_StartLiveCapture`      | 开始实时抓图           |
+| `OVD_StartLiveCaptureEx`    | 开始实时抓图（扩展版本）     |
+| `OVD_StopLiveCapture`       | 停止实时抓图           |
+| `OVD_StopLiveCaptureEx`     | 停止实时抓图（扩展版本）     |
+| `OVD_StartRecordCapture`    | 开始录像抓图           |
+| `OVD_StopRecordCapture`     | 停止录像抓图           |
+| `OVD_start_push_AOV`        | 开始AOV推送          |
+| `OVD_stop_push_AOV`         | 停止AOV推送          |
+| `OVD_check_aov_push_enable` | 检查AOV推送是否启用      |
 
 ### 安防配网
 
