@@ -1,10 +1,10 @@
 {
   "id": "conv-1773243157556-xfsgukhls",
   "title": "hey",
-  "titleGenerationStatus": "failed",
+  "titleGenerationStatus": "pending",
   "createdAt": 1773243157556,
-  "updatedAt": 1773243758090,
-  "lastResponseAt": 1773243758090,
+  "updatedAt": 1773244350982,
+  "lastResponseAt": 1773244350982,
   "sessionId": null,
   "currentNote": "常用命令/claudecode相关.md"
 }
