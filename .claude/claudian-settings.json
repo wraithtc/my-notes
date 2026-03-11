@@ -39,7 +39,7 @@
     ]
   },
   "permissionMode": "yolo",
-  "model": "haiku",
+  "model": "glm-5",
   "thinkingBudget": "off",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
@@ -54,7 +54,7 @@
     "~/Downloads"
   ],
   "persistentExternalContextPaths": [],
-  "environmentVariables": "",
+  "environmentVariables": "ANTHROPIC_AUTH_TOKEN=\"04fb5a83afea44ba87cbd2e82566237c.EkObWWaFJwCaoudx\"\nANTHROPIC_BASE_URL=\"https://open.bigmodel.cn/api/\nANTHROPIC_DEFAULT_HAIKU_MODEL=\"glm-4.5-air\",\nANTHROPIC_DEFAULT_SONNET_MODEL= \"glm-5\",\nANTHROPIC_DEFAULT_OPUS_MODEL=\"glm-5\"",
   "envSnippets": [],
   "customContextLimits": {},
   "keyboardNavigation": {
@@ -67,8 +67,8 @@
   "claudeCliPathsByHost": {},
   "loadUserClaudeSettings": true,
   "lastClaudeModel": "haiku",
-  "lastCustomModel": "",
-  "lastEnvHash": "",
+  "lastCustomModel": "glm-5",
+  "lastEnvHash": "ANTHROPIC_BASE_URL=\"https://open.bigmodel.cn/api/|ANTHROPIC_DEFAULT_HAIKU_MODEL=\"glm-4.5-air\",|ANTHROPIC_DEFAULT_OPUS_MODEL=glm-5|ANTHROPIC_DEFAULT_SONNET_MODEL=\"glm-5\",",
   "maxTabs": 3,
   "tabBarPosition": "input",
   "enableAutoScroll": true,
