@@ -1,10 +1,19 @@
 {
   "id": "conv-1773243157556-xfsgukhls",
-  "title": "hey",
-  "titleGenerationStatus": "pending",
+  "title": "Show available skills and capabilities",
+  "titleGenerationStatus": "success",
   "createdAt": 1773243157556,
-  "updatedAt": 1773244350982,
-  "lastResponseAt": 1773244350982,
+  "updatedAt": 1773244688256,
+  "lastResponseAt": 1773244688256,
   "sessionId": null,
-  "currentNote": "常用命令/claudecode相关.md"
+  "currentNote": "常用命令/claudecode相关.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 28,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 16896,
+    "contextWindow": 200000,
+    "contextTokens": 16924,
+    "percentage": 8
+  }
 }
