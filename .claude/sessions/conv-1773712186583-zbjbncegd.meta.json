@@ -3,6 +3,18 @@
   "title": "调研陪比宠物定位器的定位技术与续航原理",
   "titleGenerationStatus": "success",
   "createdAt": 1773712186583,
-  "updatedAt": 1773712189855,
-  "sessionId": null
+  "updatedAt": 1773712493761,
+  "lastResponseAt": 1773712493761,
+  "sessionId": "8d7eea08-5b7a-423b-a30d-6d48ffb81798",
+  "sdkSessionId": "8d7eea08-5b7a-423b-a30d-6d48ffb81798",
+  "currentNote": "技术调研/定位技术/陪比定位技术分析.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
 }
