@@ -40,7 +40,7 @@
   },
   "permissionMode": "normal",
   "model": "glm-5",
-  "thinkingBudget": "off",
+  "thinkingBudget": "xhigh",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "glm-5",
   "show1MModel": false,
