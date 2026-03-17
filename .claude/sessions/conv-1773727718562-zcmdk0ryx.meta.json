@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773727718562-zcmdk0ryx",
+  "title": "Compare Ingenic T32 vs RK1103b power consumption",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773727718563,
+  "updatedAt": 1773727869390,
+  "lastResponseAt": 1773727869390,
+  "sessionId": "8a399c5a-2ed7-4f1d-b3fa-5e3334856c6c",
+  "sdkSessionId": "8a399c5a-2ed7-4f1d-b3fa-5e3334856c6c",
+  "currentNote": "技术调研/定位技术/君正T32 vs RK1103B.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
