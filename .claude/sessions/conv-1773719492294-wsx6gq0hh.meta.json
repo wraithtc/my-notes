@@ -3,6 +3,18 @@
   "title": "对比两种定位器方案的最低功耗数据",
   "titleGenerationStatus": "success",
   "createdAt": 1773719492294,
-  "updatedAt": 1773719495828,
-  "sessionId": null
+  "updatedAt": 1773719829305,
+  "lastResponseAt": 1773719829305,
+  "sessionId": "82beee0d-8729-454a-80e9-117342b9dfed",
+  "sdkSessionId": "82beee0d-8729-454a-80e9-117342b9dfed",
+  "currentNote": "技术调研/定位技术/定位器功耗计算对比.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
 }
