@@ -3,6 +3,18 @@
   "title": "调研4G模组低功耗技术及可行性评估",
   "titleGenerationStatus": "success",
   "createdAt": 1773978319756,
-  "updatedAt": 1773978323154,
-  "sessionId": null
+  "updatedAt": 1773978602433,
+  "lastResponseAt": 1773978602433,
+  "sessionId": "35e3c246-3eae-4af5-8e8b-8e62cd5a7e1d",
+  "sdkSessionId": "35e3c246-3eae-4af5-8e8b-8e62cd5a7e1d",
+  "currentNote": "技术调研/嵌入式/低功耗技术.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
 }
