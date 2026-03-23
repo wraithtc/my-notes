@@ -1,0 +1,19 @@
+{
+  "id": "conv-1773243157556-xfsgukhls",
+  "title": "生成Query重写技术方案详细介绍",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773243157556,
+  "updatedAt": 1773719419325,
+  "lastResponseAt": 1773712076342,
+  "sessionId": "1689e09b-a838-4d95-a9a3-841586aa531c",
+  "sdkSessionId": "1689e09b-a838-4d95-a9a3-841586aa531c",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

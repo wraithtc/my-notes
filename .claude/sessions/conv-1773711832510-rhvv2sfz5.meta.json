@@ -1,0 +1,18 @@
+{
+  "id": "conv-1773711832510-rhvv2sfz5",
+  "title": "生成Query重写技术方案详细介绍",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773711832510,
+  "updatedAt": 1773712142358,
+  "lastResponseAt": 1773711858537,
+  "sessionId": null,
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

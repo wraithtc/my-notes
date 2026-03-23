@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773822228303-8q94x7ds0",
+  "title": "调研多宠识别技术解决方案",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773822228303,
+  "updatedAt": 1773976593539,
+  "lastResponseAt": 1773976593539,
+  "sessionId": "3931cc32-456a-46bc-a75a-3e2b4ad06165",
+  "sdkSessionId": "3931cc32-456a-46bc-a75a-3e2b4ad06165",
+  "currentNote": "技术调研/AI/多宠识别.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

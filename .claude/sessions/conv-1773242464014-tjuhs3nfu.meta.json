@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773242464014-tjuhs3nfu",
+  "title": "Greet user",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773242464014,
+  "updatedAt": 1773719422347,
+  "lastResponseAt": 1773244669915,
+  "sessionId": "ecbc6e0c-3cdd-4ac6-98da-53dff8ade65f",
+  "sdkSessionId": "ecbc6e0c-3cdd-4ac6-98da-53dff8ade65f",
+  "currentNote": "常用命令/claudecode相关.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
