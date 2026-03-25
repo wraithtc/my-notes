@@ -1,6 +1,7 @@
 {
   "userName": "",
   "enableBlocklist": true,
+  "allowExternalAccess": false,
   "blockedCommands": {
     "unix": [
       "rm -rf",
@@ -41,11 +42,13 @@
   "permissionMode": "yolo",
   "model": "glm-5",
   "thinkingBudget": "xhigh",
+  "effortLevel": "high",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "glm-5",
-  "show1MModel": false,
   "enableChrome": false,
   "enableBangBash": false,
+  "enableOpus1M": false,
+  "enableSonnet1M": false,
   "excludedTags": [],
   "mediaFolder": "",
   "systemPrompt": "",

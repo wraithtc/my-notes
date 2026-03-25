@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774420415448-xc2xbiyxy",
+  "title": "Explain ONNX export and TensorRT acceleration",
+  "titleGenerationStatus": "success",
+  "createdAt": 1774420415449,
+  "updatedAt": 1774422143675,
+  "lastResponseAt": 1774422143675,
+  "sessionId": "ad5cbf6c-0b41-40bf-b044-f9a7332befb6",
+  "sdkSessionId": "ad5cbf6c-0b41-40bf-b044-f9a7332befb6",
+  "currentNote": "技术调研/AI/多宠识别.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

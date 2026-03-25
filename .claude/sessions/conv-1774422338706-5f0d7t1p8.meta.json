@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774422338706-5f0d7t1p8",
+  "title": "Explain AI agent reward mechanisms",
+  "titleGenerationStatus": "success",
+  "createdAt": 1774422338707,
+  "updatedAt": 1774424404576,
+  "lastResponseAt": 1774424404576,
+  "sessionId": "94704e0a-d933-4444-b409-992af020ca12",
+  "sdkSessionId": "94704e0a-d933-4444-b409-992af020ca12",
+  "currentNote": "技术调研/AI/奖励机制.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
