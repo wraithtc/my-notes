@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774415198210-76i7cwphy",
+  "title": "Redesign pet facial recognition system",
+  "titleGenerationStatus": "success",
+  "createdAt": 1774415198210,
+  "updatedAt": 1774419453499,
+  "lastResponseAt": 1774419453499,
+  "sessionId": "57792afb-d774-4757-ab3a-6686e8eaf00e",
+  "sdkSessionId": "57792afb-d774-4757-ab3a-6686e8eaf00e",
+  "currentNote": "技术调研/AI/多宠识别.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
