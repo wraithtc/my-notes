@@ -1,0 +1,1 @@
+codex --search ----dangerously-bypass-approvals-and-sandbox -C ~/dev/task/paper-write/
