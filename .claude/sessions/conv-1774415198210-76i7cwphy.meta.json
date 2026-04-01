@@ -3,10 +3,13 @@
   "title": "给我写一份关于YoLo world的调研，我是一个视觉ai的开发者，开发关于宠物家用监控相关的视觉算...",
   "titleGenerationStatus": "failed",
   "createdAt": 1774415198210,
-  "updatedAt": 1775019192971,
-  "lastResponseAt": 1775019192971,
-  "sessionId": null,
-  "sdkSessionId": "57792afb-d774-4757-ab3a-6686e8eaf00e",
+  "updatedAt": 1775019640106,
+  "lastResponseAt": 1775019640106,
+  "sessionId": "6048abce-a2f6-461f-88bc-97ea95a7bd44",
+  "sdkSessionId": "6048abce-a2f6-461f-88bc-97ea95a7bd44",
+  "previousSdkSessionIds": [
+    "57792afb-d774-4757-ab3a-6686e8eaf00e"
+  ],
   "currentNote": "技术调研/AI/YOLO World.md",
   "usage": {
     "model": "glm-5.1",
