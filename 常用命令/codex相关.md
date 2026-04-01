@@ -1,1 +1,1 @@
-codex --search --dangerously-bypass-approvals-and-sandbox --full-auto -C ~/dev/task/paper-write/
+proxy codex --search --dangerously-bypass-approvals-and-sandbox  -C ~/dev/task/paper-write/
