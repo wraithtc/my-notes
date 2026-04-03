@@ -1,0 +1,20 @@
+{
+  "id": "conv-1775206491727-rvionehwh",
+  "title": "Build pet food ingredient analysis feature",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775206491727,
+  "updatedAt": 1775206718642,
+  "lastResponseAt": 1775206718642,
+  "sessionId": "77c51b21-77d0-431e-af1a-1ae899c986ac",
+  "sdkSessionId": "77c51b21-77d0-431e-af1a-1ae899c986ac",
+  "currentNote": "技术调研/AI/宠物食品成分检索.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
