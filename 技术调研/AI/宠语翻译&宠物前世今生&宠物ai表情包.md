@@ -55,13 +55,13 @@
 
 #### 🔥 推荐模型
 
-| 模型 | 团队 | 特点 | GitHub |
-|-----|------|------|--------|
-| **Qwen2-Audio** | 阿里通义 | 支持语音/音乐/自然声音（含动物声音），开源可商用 | [QwenLM/Qwen2-Audio](https://github.com/QwenLM/Qwen2-Audio) |
-| **SenseVoice** | 阿里 | 多语言语音识别，情感识别能力强 | [FunAudioLLM/SenseVoice](https://github.com/FunAudioLLM/SenseVoice) |
-| **FunASR** | 阿里达摩院 | 语音识别工具链，支持自定义训练 | [modelscope/FunASR](https://github.com/modelscope/FunASR) |
-| **Whisper** | OpenAI | 开源语音识别，可微调用于动物声音 | [openai/whisper](https://github.com/openai/whisper) |
-| **Audio Flamingo** | - | 开源音频大语言模型，多任务能力强 | [lahaudio/Audio-Flamingo](https://github.com/lahaudio/Audio-Flamingo) |
+| 模型                 | 团队     | 特点                        | GitHub                                                                |
+| ------------------ | ------ | ------------------------- | --------------------------------------------------------------------- |
+| **Qwen2-Audio**    | 阿里通义   | 支持语音/音乐/自然声音（含动物声音），开源可商用 | [QwenLM/Qwen2-Audio](https://github.com/QwenLM/Qwen2-Audio)           |
+| **SenseVoice**     | 阿里     | 多语言语音识别，情感识别能力强           | [FunAudioLLM/SenseVoice](https://github.com/FunAudioLLM/SenseVoice)   |
+| **FunASR**         | 阿里达摩院  | 语音识别工具链，支持自定义训练           | [modelscope/FunASR](https://github.com/modelscope/FunASR)             |
+| **Whisper**        | OpenAI | 开源语音识别，可微调用于动物声音          | [openai/whisper](https://github.com/openai/whisper)                   |
+| **Audio Flamingo** | -      | 开源音频大语言模型，多任务能力强          | [lahaudio/Audio-Flamingo](https://github.com/lahaudio/Audio-Flamingo) |
 
 #### Qwen2-Audio 详情
 

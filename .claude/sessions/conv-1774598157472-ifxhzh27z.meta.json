@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774598157472-ifxhzh27z",
+  "title": "Compare Qwen2Audio for speech emotion recognition",
+  "titleGenerationStatus": "success",
+  "createdAt": 1774598157473,
+  "updatedAt": 1774598245630,
+  "lastResponseAt": 1774598245630,
+  "sessionId": "65fca70c-7203-4e0c-8e3a-e900d704b1e8",
+  "sdkSessionId": "65fca70c-7203-4e0c-8e3a-e900d704b1e8",
+  "currentNote": "技术调研/AI/宠语翻译&宠物前世今生&宠物ai表情包.md",
+  "usage": {
+    "model": "glm-5",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
