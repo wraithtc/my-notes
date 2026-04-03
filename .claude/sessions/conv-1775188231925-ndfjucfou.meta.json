@@ -3,6 +3,18 @@
   "title": "分析宠物定位器VoLTE通话安全方案",
   "titleGenerationStatus": "success",
   "createdAt": 1775188231926,
-  "updatedAt": 1775188245829,
-  "sessionId": null
+  "updatedAt": 1775188636477,
+  "lastResponseAt": 1775188636477,
+  "sessionId": "0732f4a2-2a8a-442d-9220-a4ef8821fdf9",
+  "sdkSessionId": "0732f4a2-2a8a-442d-9220-a4ef8821fdf9",
+  "currentNote": "技术调研/嵌入式/定位器接听电话白名单.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
 }
