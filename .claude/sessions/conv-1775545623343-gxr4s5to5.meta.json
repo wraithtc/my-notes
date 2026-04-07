@@ -3,6 +3,18 @@
   "title": "Design solution based on file background info",
   "titleGenerationStatus": "success",
   "createdAt": 1775545623343,
-  "updatedAt": 1775545632886,
-  "sessionId": null
+  "updatedAt": 1775546166831,
+  "lastResponseAt": 1775546166831,
+  "sessionId": "a15d2b22-5cd8-4e48-a04d-fdb922373991",
+  "sdkSessionId": "a15d2b22-5cd8-4e48-a04d-fdb922373991",
+  "currentNote": "技术调研/嵌入式/MQTT心跳与业务报文低功耗优化.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 164,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 32064,
+    "contextWindow": 200000,
+    "contextTokens": 32228,
+    "percentage": 16
+  }
 }
