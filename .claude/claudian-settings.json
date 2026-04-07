@@ -1,7 +1,6 @@
 {
   "userName": "",
   "enableBlocklist": true,
-  "allowExternalAccess": false,
   "blockedCommands": {
     "unix": [
       "rm -rf",
@@ -40,15 +39,13 @@
     ]
   },
   "permissionMode": "yolo",
-  "model": "glm-5",
+  "model": "glm-5.1",
   "thinkingBudget": "xhigh",
-  "effortLevel": "high",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "glm-5",
+  "show1MModel": false,
   "enableChrome": false,
   "enableBangBash": false,
-  "enableOpus1M": false,
-  "enableSonnet1M": false,
   "excludedTags": [],
   "mediaFolder": "",
   "systemPrompt": "",
@@ -57,7 +54,7 @@
     "~/Downloads"
   ],
   "persistentExternalContextPaths": [],
-  "environmentVariables": "ANTHROPIC_API_KEY=04fb5a83afea44ba87cbd2e82566237c.EkObWWaFJwCaoudx\nANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic\nANTHROPIC_DEFAULT_HAIKU_MODEL=glm-4.5-air\nANTHROPIC_DEFAULT_SONNET_MODEL= glm-5\nANTHROPIC_DEFAULT_OPUS_MODEL=glm-5",
+  "environmentVariables": "ANTHROPIC_API_KEY=04fb5a83afea44ba87cbd2e82566237c.EkObWWaFJwCaoudx\nANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic\nANTHROPIC_DEFAULT_HAIKU_MODEL=glm-4.5-air\nANTHROPIC_DEFAULT_SONNET_MODEL= glm-5.1\nANTHROPIC_DEFAULT_OPUS_MODEL=glm-5.1",
   "envSnippets": [],
   "customContextLimits": {},
   "keyboardNavigation": {
@@ -70,11 +67,15 @@
   "claudeCliPathsByHost": {},
   "loadUserClaudeSettings": true,
   "lastClaudeModel": "haiku",
-  "lastCustomModel": "glm-5",
-  "lastEnvHash": "ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic|ANTHROPIC_DEFAULT_HAIKU_MODEL=glm-4.5-air|ANTHROPIC_DEFAULT_OPUS_MODEL=glm-5|ANTHROPIC_DEFAULT_SONNET_MODEL=glm-5",
+  "lastCustomModel": "glm-5.1",
+  "lastEnvHash": "ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic|ANTHROPIC_DEFAULT_HAIKU_MODEL=glm-4.5-air|ANTHROPIC_DEFAULT_OPUS_MODEL=glm-5.1|ANTHROPIC_DEFAULT_SONNET_MODEL=glm-5.1",
   "maxTabs": 3,
   "tabBarPosition": "input",
   "enableAutoScroll": true,
   "openInMainTab": false,
-  "hiddenSlashCommands": []
+  "hiddenSlashCommands": [],
+  "allowExternalAccess": false,
+  "effortLevel": "high",
+  "enableOpus1M": false,
+  "enableSonnet1M": false
 }
