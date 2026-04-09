@@ -20,196 +20,245 @@ status: 持续跟进
 
 ---
 
-## OpenClaw 简介
+## 一、宠物相关 OpenClaw 产品（具名案例）
 
-**OpenClaw**（前身为 ClawdBot，社区昵称"小龙虾"）是一个**开源的、本地优先的 AI 智能体（Agent）框架**，采用 MIT 开源协议。
+### 1.1 PetClaw AI —— 基于 OpenClaw 的桌面宠物助手
 
-| 指标 | 数据 |
+| 项目 | 详情 |
 |------|------|
-| GitHub Stars | 28万+，史上增长最快的开源项目 |
-| 技能市场（ClawHub） | 13,000+ Skills |
-| 衍生项目 | 14+ 个开源衍生项目 |
-| 爆火时间 | 2026年初 |
+| **产品名** | PetClaw AI |
+| **官网** | [petclaw.ai](https://petclaw.ai/) |
+| **定位** | 基于 OpenClaw 开源框架的 AI 桌面宠物助手，以虚拟宠物形象常驻桌面 |
+| **平台** | Windows、macOS |
+| **价格** | 免费下载使用，新用户赠送 100 积分；高级功能需积分/订阅 |
+| **核心功能** | ①语音交互下达任务 ②一键整理100份文件（本地处理） ③日程管理/会议安排 ④邮件自动回复 ⑤内容创作 ⑥技能广场扩展 ⑦长期记忆自主学习 ⑧萌宠形式情感陪伴 |
+| **技术特点** | 完全本地运行（隐私优先）、零配置、低系统占用 |
+| **来源** | [AIbase](https://top.aibase.com/tool/petclaw-ai)、[Toolifies](https://www.toolifies.com/tool/petclaw-ai/)、[Yahoo Finance](https://finance.yahoo.com/sectors/technology/articles/petclaw-ai-launches-autonomous-desktop-130000356.html) |
 
-**核心能力**：让 AI 从"被动知识提供者"转变为能真正**执行任务**的智能体，支持接入 WhatsApp、Telegram、Discord 等即时通讯平台，可自主浏览网页、执行操作、完成真实任务。
+### 1.2 VetClaw —— 全球首个兽医 AI 技能库
 
----
-
-## 一、宠物平台服务
-
-### 1.1 宠物医疗 AI
-
-- **AI 语音问诊**：智能生成标准化病历并支持打印和分享，每位兽医拥有自己的"AI 诊疗助理"
-- **效率提升**：单例病历处理效率提升 **70%**，人为失误导致的纠纷率显著降低
-- **行业渗透**：据《2025年中国宠物医疗行业数字化发展报告》，国内超过 **68%** 的宠物医院已引入或计划引入具备 AI 功能的医院管理软件
-- **挑战**：OpenClaw 在通用场景表现亮眼，但在容错要求更高的宠物医疗领域，核心难点在于如何将通用大模型转化为具备**专业知识和临床能力**的应用
-
-> 来源：[AI+宠物医疗赛道迎来新变量 - 中华网](https://mtz.china.com/touzi/2026/0312/221508.html)
-
-### 1.2 宠物门店数字化
-
-- OpenClaw 的部署与训练过程（持续观察运行状态、修复错误、添加能力模块）类比"养宠物"，启发了宠物门店的**智能化运营**思路
-- 典型案例：全国知名宠物用品超市，通过 AI 技术同步管理线下门店和线上外卖平台，实现运营效率大幅提升
-- 宠物新零售行业正在经历**信息化转型黄金期**，智能设备、医疗数字化和门店信息化三大赛道蕴含巨大机会
-
-> 来源：[从OpenClaw到宠物门店的数字化想象](https://www.industrysourcing.cn/article/474542)
-
-### 1.3 宠物品牌营销
-
-- 国内领先宠物食品品牌借助 AI 优化服务，核心产品在 AI 平台的主动推荐率升至**行业第一**
-- 线上渠道相关产品搜索量增长 **220%**
-
-> 来源：[2026年1月战略支持能力排行 - IT之家](https://www.ithome.com/0/915/171.htm)
-
-### 1.4 社区物业中的宠物服务
-
-- OpenClaw 可精准记录业主个性化偏好（包括宠物饲养信息），主动提供针对性服务
-- 如定期提醒工作人员关注独居老人和宠物等
-
-> 来源：[OpenClaw 在物业行业中涉及宠物服务 - GitCode](https://gitcode.csdn.net/69ca8de70a2f6a37c59b9eed.html)
-
----
-
-## 二、宠物智能硬件
-
-### 2.1 OpenClaw + 机器狗（核心进展）
-
-这是当前最引人注目的硬件结合方向：
-
-| 项目 | 说明 |
+| 项目 | 详情 |
 |------|------|
-| **OpenGo** | 基于 OpenClaw 的开源具身智能机器狗系统，支持**实时技能切换**，已发表学术论文（[arXiv: 2604.01708](https://arxiv.org/html/2604.01708v1)） |
-| **Gogobot D1** | 商用 AI 机器狗，运行 OpenClaw，面向消费者市场 |
-| **Unitree Go2** | 四足机器人平台，被 OpenGo 选用为硬件载体，具备 4D LiDAR 感知、360°识别视野 |
-| **ROS2 集成** | OpenClaw 通过 ROS2 控制协议将 AI Agent 转化为实体机器人 |
+| **项目名** | VetClaw |
+| **开发方** | OpenVet |
+| **定位** | 全球首个开源兽医 AI 技能库（Veterinary AI Skills Library），面向 OpenClaw 平台 |
+| **GitHub** | [OpenVet-Projects/VetClaw](https://github.com/OpenVet-Projects/VetClaw) |
+| **技能数量** | **51 个 AI Skills** |
+| **核心功能领域** | ①物种感知（Species-aware）临床工作流 ②药物安全（Drug Safety）③临床决策支持（Clinical Decision Support） |
+| **开放方式** | 免费开源，面向研究人员、开发者和兽医专业人员 |
+| **安全特性** | Safety-first 设计，内置安全边界 |
+| **来源** | [Enterprise News 新闻稿](https://www.enterprisenews.com/press-release/story/90672/)、[LinkedIn 公告](https://www.linkedin.com/posts/sager_github-openvet-projectsvetclaw-the-first-activity-7440080084495040513-bYvb)、[OpenVet.ai](https://openvet.ai/resources) |
 
-> 来源：[OpenClaw Shifting From AI Agents to Physical Robots](https://www.intelligentliving.co/openclaw-ai-physical-robots-ros2-diy/)、[36Kr - 新兴AI硬件生态](https://eu.36kr.com/en/p/3715194472771968)
+### 1.3 Gogobot D1 —— 消费级 AI 机器狗
 
-### 2.2 CES 2026 宠物科技亮点
-
-| 产品 | 功能 |
+| 项目 | 详情 |
 |------|------|
-| **Aura 陪伴机器人** | 杭州产，可在屋内移动，监控宠物行为，追踪饮食和活动，向主人发送提醒（约 $3,000） |
-| **Cheerble Match G1 智能喂食器** | CES 2026 首发，面向多猫家庭，无需穿戴设备即可识别不同猫咪 |
-| **FireTag 智能项圈** | 集成追踪和家庭安防警报功能 |
-| **MQ771-GL 芯片** | 针对智能项圈优化了尺寸和功耗，推动宠物科技革命 |
+| **产品名** | Gogobot D1 |
+| **定位** | 消费级 AI 四足机器狗，搭载 OpenClaw 开放编程生态 |
+| **价格** | VIP 早鸟 $199 / 标准早鸟 $239 |
+| **众筹平台** | Kickstarter（截止 2026年5月3日） |
+| **重量** | 约 800g，紧凑便携 |
+| **核心功能** | ①情感 AI 对话（语音交互）②表现力动作（坐、跳、握手、伸展）③双 ToF 激光传感器避障 ④头部触摸传感器 ⑤可更换外壳 ⑥手机 App 控制（含越野模式）⑦表情屏幕 ⑧支持用户自定义编程 |
+| **目标用户** | 儿童、科技爱好者、家庭、STEM 教育 |
+| **来源** | [YouTube 开箱视频](https://www.youtube.com/watch?v=1F45TJeFuUA) |
 
-> 来源：[CNET - CES 2026 Pet Tech](https://www.cnet.com/home/kitchen-and-household/all-the-best-pet-tech-that-stood-out-at-ces-2026/)、[Tech Times Pet Tech 2026](https://www.techtimes.com/articles/315423/20260326/pet-tech-2026-features-ai-dog-collars-smart-pet-feeders-gps-tracker-wearables-that-really-work.htm)
+### 1.4 涂鸦智能 Aura —— AI 宠物陪伴机器人
 
-### 2.3 OpenClaw 在真实硬件上运行 AI Pet
-
-- 开发者成功在 **Pamir.ai Distiller One** 墨水屏设备（带摄像头、麦克风、扬声器、240x416 像素显示屏）上运行 OpenClaw AI Pet
-- 实现了硬件级别的 AI 宠物交互，包括视觉感知（ComfyUI 工作流）
-
-> 来源：[OpenClaw AI Pet on Real Hardware - YouTube](https://www.youtube.com/watch?v=olSGmEOd4PY)
-
-### 2.4 智能硬件趋势总结
-
-OpenClaw 正在推动智能硬件从"会回应"到"**能执行**"的转变，竞争从单点功能转向**任务完成能力**。这对宠物智能硬件（自动喂食器、智能猫砂盆等）有重要启发意义。
-
-> 来源：[OpenClaw 重构智能硬件的执行能力 - 亿欧](https://www.iyiou.com/news/202604011125741)
-
----
-
-## 三、宠物 App 与数字宠物
-
-### 3.1 赛博养虾（Cyber Pet）
-
-2026年初，OpenClaw 本身成为一种"**数字宠物**"现象：
-
-- 用户给智能体起名字、设定性格，观察它们的"社交行为"
-- "AI 养龙虾"成为新的科技圈社交问候语
-- 从学龄儿童到退休老人，全民参与"养龙虾"
-- 飞书官方发布 OpenClaw 版本，提供零门槛养虾指南
-
-> 来源：[新浪财经 - 赛博养虾火爆](https://finance.sina.cn/stock/jdts/2026-02-26/detail-inhpcyyk1416617.d.html)、[The Standard - Schoolkids and Retirees Raise Lobsters](https://www.thestandard.com.hk/china/article/327158/As-OpenClaw-enthusiasm-grips-China-schoolkids-and-retirees-alike-raise-lobsters)
-
-### 3.2 衍生宠物相关项目
-
-| 项目 | 说明 |
+| 项目 | 详情 |
 |------|------|
-| **Clawra** | 有"灵魂"的专属 AI 女友（数字陪伴类） |
-| **ApkClaw** | 将闲置手机秒变 AI 智能体（可作为家庭 AI 宠物终端） |
-| **OneClaw** | 面向小白的简化版，降低 AI 宠物入门门槛 |
+| **产品名** | Aura（AI 宠物陪伴机器人） |
+| **公司** | **涂鸦智能**（全球 IoT 云平台，杭州） |
+| **发布场合** | CES 2026 中央展馆 |
+| **定位** | 集陪伴互动、智能照护与生活服务于一体的 AI 宠物机器人 |
+| **价格** | 约 $3,000 |
+| **核心功能** | ①多模态 AI 交互，识别宠物情绪 ②自动喂食与健康监测 ③AI 跟拍记录宠物精彩瞬间 ④远程逗宠 ⑤家庭安防 |
+| **配套产品** | **PetCare 宠物情绪项圈**（全球首发关注宠物情感健康的智能穿戴设备） |
+| **⚠️注意** | 涂鸦智能的 Aura 是独立 IoT 产品，**并非直接基于 OpenClaw 构建**，但涂鸦智能的 IoT 平台开放 API 理论上可与 OpenClaw 联动 |
+| **来源** | [涂鸦智能官网新闻](https://www.tuya.com/cn/news-details/Kfb0ib7luhjq4) |
 
----
+### 1.5 OpenGo —— 学术界 OpenClaw 机器狗框架
 
-## 四、宠物相关的 OpenClaw Skill
-
-### 4.1 已确认的宠物相关 Skill
-
-| Skill 名称 | 功能 | 来源 |
-|---|---|---|
-| **Homeclaw** | 家庭模式智能管家，功能涵盖宠物照顾、健康监测、学习辅导、家居控制、日程管理 | [FindSkills](https://findskills.org/zh/skills/clawhub-homeclaw) |
-| **wellness-skills** | 健康类技能集合（12个），可扩展用于宠物健康监测场景 | [GitHub](https://github.com/AgentWorkers/awesome-openclaw-skills-cn) |
-
-### 4.2 ClawHub 技能市场概况
-
-- ClawHub 拥有 **13,000+ Skills**，是 OpenClaw 的官方技能市场
-- 已有火山引擎共建的 **ClawHub 中国镜像站**，国内用户无需翻墙
-- 精选资源：
-  - [awesome-openclaw-skills-cn（中文版精选集合）](https://github.com/AgentWorkers/awesome-openclaw-skills-cn)
-  - [Top 25 Awesome OpenClaw Skills - Apidog](https://apidog.com/blog/top-25-awesome-openclaw-skills/)
-  - [ClawHub Skill 精选（国内用户版）](https://tbbbk.com/clawhub-skill-picks-for-china-users/)
-- ⚠️ 安全警告：ClawHub 中约 **10.8%** 的第三方插件暗藏恶意代码，安装时需注意安全审查
-
-### 4.3 潜在可探索方向
-
-- 宠物喂食器控制 Skill
-- 宠物健康监测与预警 Skill
-- 宠物行为分析 Skill
-- 兽医知识库 Skill
-
-> 建议定期在 [ClawHub](https://findskills.org) 和 [GitHub 中文技能汇总](https://github.com/AgentWorkers/awesome-openclaw-skills-cn) 中搜索 "pet"、"veterinary"、"feeder" 等关键词获取最新宠物相关 Skill
-
----
-
-## 五、行业数据与趋势
-
-| 指标 | 数据 |
+| 项目 | 详情 |
 |------|------|
-| 2026年宠物经济规模 | 预计突破 **9000亿元** |
-| 宠物医院 AI 采用率 | **68%+** 已引入或计划引入 |
-| AI 病历处理效率提升 | **70%** |
-| OpenClaw GitHub Stars | **28万+** |
-| ClawHub Skills 数量 | **13,000+** |
+| **项目名** | OpenGo |
+| **来源机构** | **中国科学技术大学（USTC）** |
+| **硬件平台** | **宇树科技 Unitree Go2** 四足机器人 |
+| **底层框架** | OpenClaw |
+| **论文** | [arXiv: 2604.01708](https://arxiv.org/html/2604.01708v1) |
+| **核心创新** | 利用 LLM 实现**实时技能切换**——机器狗可根据不同场景和任务动态调度技能 |
+| **技术架构** | ①经过验证的技能库（Verified Skill Library）②基于 LLM 的实时技能调度机制 |
+| **评估内容** | 响应指令速度、处理任务序列能力 |
+| **来源** | [alphaXiv 概述](https://alphaxiv.org/zh/overview/2604.01708v1) |
 
-### 核心趋势
+### 1.6 OpenClaw AI Pet on Distiller One —— 硬件 AI 宠物
 
-1. **AI 从"给方案"到"能执行"**：OpenClaw 正推动宠物行业从信息获取向任务自动化转变
-2. **具身智能加速落地**：OpenClaw + 机器狗/机器人的结合为宠物陪伴硬件开辟新赛道
-3. **数字宠物文化兴起**：赛博养虾现象证明 AI 宠物有巨大的用户需求和文化影响力
-4. **宠物医疗 AI 深水区**：从通用 AI 到专业临床应用的转化仍是核心挑战
-5. **生态快速扩张**：ClawHub 技能市场快速增长，宠物相关 Skill 有望持续丰富
+| 项目 | 详情 |
+|------|------|
+| **硬件** | **Pamir.ai Distiller One**（限量版墨水屏设备） |
+| **硬件规格** | 摄像头 + 麦克风 + 扬声器 + 240×416 像素墨水屏 |
+| **实现内容** | 在物理设备上运行 OpenClaw AI Pet，实现硬件级 AI 宠物交互 |
+| **视觉方案** | 通过 ComfyUI 工作流实现视觉感知 |
+| **开发过程** | 使用 Cursor 的 parallel agents 辅助开发 |
+| **来源** | [YouTube 视频](https://www.youtube.com/watch?v=olSGmEOd4PY)（含完整技术讲解） |
 
 ---
 
-## 六、持续关注清单
+## 二、ClawHub 宠物相关 Skill（已确认并验证）
 
-- [ ] ClawHub 上新增的宠物相关 Skill（按月检查）
-- [ ] OpenGo / Gogobot 等机器狗项目进展
-- [ ] 宠物医疗 AI 的落地案例（关注头部宠物医院集团）
-- [ ] CES / IFA 等展会的宠物科技新品
+### 2.1 Dog —— 狗狗全方位护理 Skill
+
+| 项目 | 详情 |
+|------|------|
+| **Skill 名称** | `dog` |
+| **作者** | `ivangdavila` |
+| **ClawHub 地址** | [clawhub.ai/ivangdavila/dog](https://clawhub.ai/ivangdavila/dog) |
+| **安全评级** | Benign（高可信度），无外部网络请求 |
+| **数据存储** | 全部本地存储在 `~/dog/` 目录 |
+| **功能范围** | 症状分诊（triage）、遛狗记录、训练跟踪、日常管理、行为分析、旅行/寄养准备、兽医协调、购物补给 |
+| **文件结构** | 每只狗独立目录，含 profile.md / health.md / routines.md / behavior.md / training.md / logistics.md / timeline.md |
+| **紧急分诊** | 内置 `triage.md`，遇到呼吸困难、癫痫、中毒、大出血等紧急情况立即切换到急救指导 |
+| **明确不做的** | 不做疾病诊断、不推荐药物剂量、不推荐惩罚性训练、不自动写入记忆 |
+
+### 2.2 Pet Companion Journal —— 宠物伴侣日记
+
+| 项目 | 详情 |
+|------|------|
+| **Skill 名称** | `pet-companion-journal` |
+| **作者** | `skills`（官方） |
+| **ClawHub 地址** | [clawhub.ai/skills/pet-companion-journal](https://clawhub.ai/skills/pet-companion-journal) |
+| **数据存储** | `~/.pet-companion/`，包含 pets/、records/、reminders/、media/、reports/ |
+| **核心功能** | ①宠物档案管理（名字、物种、品种、生日、绝育状态等）②6种记录类型（daily/moment/photo/feeding/health/reminder-note）③提醒管理（疫苗、驱虫、体检、美容、用药、复诊）④结构化查询（按宠物、记录类型、时间范围、关键词）⑤导出报告 |
+| **配套脚本** | `pet_manager.py`、`record_add.py`、`reminder_manage.py`、`reminder_check.py`、`record_query.py`、`export_report.py` |
+| **隐私** | 本地优先，不分享宠物照片和诊所记录 |
+
+### 2.3 Pets —— ClawHub 宠物分类页官方 Skill
+
+| 项目 | 详情 |
+|------|------|
+| **Skill 名称** | `pets`（分类页聚合 Skill） |
+| **ClawHub 地址** | [clawhub.ai/skills/pets](https://clawhub.ai/skills/pets) |
+| **安全评级** | Benign（高可信度） |
+| **功能** | 宠物档案管理、日常记录、行为追踪、训练进度、创意项目 |
+| **数据存储** | 全部本地文件 `~/pets/`（index.md、profile.md、log.jsonl、照片等） |
+| **特色** | 自动记录用户随口提及的宠物信息（"always log casual mentions"） |
+
+### 2.4 desktop-pet —— 桌面宠物形象 Skill
+
+| 项目 | 详情 |
+|------|------|
+| **Skill 名称** | `desktop-pet` |
+| **作者** | `kk43994` |
+| **ClawHub 地址** | [clawhub.ai/kk43994/desktop-pet](https://clawhub.ai/kk43994/desktop-pet) |
+| **功能** | 给 OpenClaw 一个桌面宠物形象——流体玻璃球宠物 |
+| **特色功能** | ①语音克隆 ②15+ 眼部表情 ③桌面歌词叠加 ④7种心情颜色 |
+
+### 2.5 Homeclaw —— 家庭智能管家（含宠物照顾）
+
+| 项目 | 详情 |
+|------|------|
+| **Skill 名称** | `Homeclaw` |
+| **来源** | [FindSkills](https://findskills.org/zh/skills/clawhub-homeclaw) |
+| **功能** | 家庭模式智能管家，涵盖宠物照顾、健康监测、学习辅导、家居控制、日程管理 |
+| **更新时间** | 2026-03-10 |
+| **安全级别** | 社区 |
+| **质量评级** | 中等 |
+
+---
+
+## 三、宠物行业中使用 OpenClaw 的具体案例（企业/品牌）
+
+> ⚠️ 以下案例来自公开报道，部分企业名称未在报道中披露。
+
+### 3.1 某宠物零食品牌（博客园报道）
+
+- **来源**：[OpenClaw 在宠物零食行业的应用场景 - 博客园](https://www.cnblogs.com/sunzhenyong/p/19767746)
+- **应用场景**：
+  - 监控原材料价格波动 → 自动下单补货
+  - 跟踪物流状态 → 协调供应商沟通
+  - 智能客服（产品成分咨询、喂食建议、宠物过敏问题）
+- **效果**：客服响应时间从平均 **2 小时 → 15 分钟**；电商运营效率提升 **60%**；每月节省人力成本约 **2 万元**
+
+### 3.2 全国知名宠物用品超市（网易易盾案例）
+
+- **来源**：网易副总裁阮良在企业级 AI 应用分析中提及
+- **背景**：同步在线下门店和线上外卖平台销售，覆盖区域广、商品种类多
+- **应用**：部署 OpenClaw 类 AI 智能体，实现客服/订单管理等自动化流程
+- **效果**：运营效率大幅提升（具体数值未披露）
+- **来源**：[OpenClaw 给了每个人"数字分身"，但企业更需要可靠的AI员工 - 新浪财经](https://t.cj.sina.cn/articles/view/6522187104/184c0ad60001015s0m)
+
+### 3.3 飞书 × 宠物智能设备接入示例
+
+- **来源**：[飞书官网 - OpenClaw 接入飞书后能做什么](https://www.feishu.cn/content/article/7618097619889343446)
+- **具体能力**（通过 OpenClaw 接入宠物智能设备如智能项圈）：
+  - 24小时监控宠物心率、体温、活动量
+  - 异常数据自动预警
+  - 生成健康周报，发现潜在问题
+  - 提供个性化喂养建议
+- **注意**：这是飞书官方给出的**功能场景示例**，非特定企业合作案例
+
+### 3.4 OpenClaw Mobile 宠物护理自动化指南
+
+- **来源**：[OpenClaw Mobile 宠物护理自动化指南](https://openclawmobile.ai/zh/blog/openclawmobile-pet-care-automation-guide-zh)
+- **具体自动化场景**：
+  - 每月1号凌晨：自动在宠物店下单猫粮和猫砂（使用存储的优惠券）
+  - 每季度疫苗前一周：自动预约最近的宠物医院，把时间加到日历
+  - 每三个月：驱虫药提醒
+
+---
+
+## 四、尚未发现 OpenClaw 接入的具体宠物公司
+
+以下公司/品牌经搜索**未找到**与 OpenClaw 的公开合作/接入信息：
+
+| 品牌 | 搜索结果 |
+|------|----------|
+| 波奇网 | ❌ 未找到 |
+| 萌爪医生 | ❌ 未找到 |
+| 小佩（Petkit） | ❌ 未找到 |
+| CATLINK | ❌ 未找到 |
+| 有陪 | ❌ 未找到 |
+| 路斯 | ❌ 未找到 |
+
+**结论**：OpenClaw 在传统宠物行业（宠物食品、宠物用品、宠物医疗）的落地目前处于**早期探索阶段**，公开的具名商业案例非常少。当前宠物相关应用主要集中在：
+1. **开发者社区**：开源 Skill 开发（dog、pet-companion-journal 等）
+2. **硬件创客**：机器狗/机器人集成（OpenGo、Gogobot D1）
+3. **消费者产品**：桌面宠物类（PetClaw AI）
+
+---
+
+## 五、持续关注清单
+
+- [ ] VetClaw 的 51 个具体技能列表（监控 GitHub 仓库更新）
+- [ ] Gogobot D1 Kickstarter 众筹结果（截止 2026-05-03）
+- [ ] PetClaw AI 用户增长和市场反馈
+- [ ] 涂鸦智能 Aura + PetCare 项圈正式发售情况
+- [ ] OpenGo 论文后续进展（USTC 是否开源代码）
+- [ ] 传统宠物公司（波奇、小佩等）是否公开接入 OpenClaw
+- [ ] ClawHub `/skills/pets` 分类页新增 Skill
 - [ ] OpenClaw 版本更新对宠物硬件生态的影响
-- [ ] Aura 等宠物陪伴机器人的市场反馈
 
 ---
 
 ## 参考来源
 
-- [AI+宠物医疗赛道迎来新变量 - 中华网](https://mtz.china.com/touzi/2026/0312/221508.html)
-- [从OpenClaw到宠物门店的数字化想象](https://www.industrysourcing.cn/article/474542)
-- [OpenClaw 重构智能硬件的执行能力 - 亿欧](https://www.iyiou.com/news/202604011125741)
+**产品/项目**
+- [PetClaw AI 官网](https://petclaw.ai/)
+- [PetClaw AI - AIbase](https://top.aibase.com/tool/petclaw-ai)
+- [VetClaw - Enterprise News](https://www.enterprisenews.com/press-release/story/90672/)
+- [VetClaw - LinkedIn](https://www.linkedin.com/posts/sager_github-openvet-projectsvetclaw-the-first-activity-7440080084495040513-bYvb)
 - [OpenGo 论文 - arXiv](https://arxiv.org/html/2604.01708v1)
-- [36Kr - 新兴AI硬件生态](https://eu.36kr.com/en/p/3715194472771968)
-- [CNET - CES 2026 Pet Tech](https://www.cnet.com/home/kitchen-and-household/all-the-best-pet-tech-that-stood-out-at-ces-2026/)
-- [Tech Times - Pet Tech 2026](https://www.techtimes.com/articles/315423/20260326/pet-tech-2026-features-ai-dog-collars-smart-pet-feeders-gps-tracker-wearables-that-really-work.htm)
-- [OpenClaw AI Pet on Real Hardware - YouTube](https://www.youtube.com/watch?v=olSGmEOd4PY)
-- [awesome-openclaw-skills-cn - GitHub](https://github.com/AgentWorkers/awesome-openclaw-skills-cn)
-- [Homeclaw Skill - FindSkills](https://findskills.org/zh/skills/clawhub-homeclaw)
-- [ClawHub Skill 精选](https://tbbbk.com/clawhub-skill-picks-for-china-users/)
-- [Top 25 OpenClaw Skills - Apidog](https://apidog.com/blog/top-25-awesome-openclaw-skills/)
-- [OpenClaw 官网](https://openclaw.ai/)
-- [CNN - China's OpenClaw obsession](https://www.cnn.com/2026/03/29/business/china-openclaw-ai-anxiety-intl-hnk-dst)
-- [WIRED - China OpenClaw Gold Rush](https://www.wired.com/story/china-is-going-all-in-on-openclaw/)
-- [BBC中文 - OpenClaw热潮拆解](https://www.bbc.com/zhongwen/articles/c93wvdn91kxo/simp)
+- [Gogobot D1 开箱 - YouTube](https://www.youtube.com/watch?v=1F45TJeFuUA)
+- [涂鸦智能 Aura - 官方新闻](https://www.tuya.com/cn/news-details/Kfb0ib7luhjq4)
+- [OpenClaw AI Pet on Distiller One - YouTube](https://www.youtube.com/watch?v=olSGmEOd4PY)
+
+**ClawHub Skills**
+- [Dog Skill](https://clawhub.ai/ivangdavila/dog)
+- [Pet Companion Journal](https://clawhub.ai/skills/pet-companion-journal)
+- [Pets 分类页](https://clawhub.ai/skills/pets)
+- [desktop-pet](https://clawhub.ai/kk43994/desktop-pet)
+
+**行业案例**
+- [宠物零食行业应用 - 博客园](https://www.cnblogs.com/sunzhenyong/p/19767746)
+- [OpenClaw 宠物护理自动化 - OpenClaw Mobile](https://openclawmobile.ai/zh/blog/openclawmobile-pet-care-automation-guide-zh)
+- [飞书 × OpenClaw 落地示例](https://www.feishu.cn/content/article/7618097619889343446)
+- [宠物门店数字化想象](https://www.industrysourcing.cn/article/474542)
