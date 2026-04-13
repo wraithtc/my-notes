@@ -54,7 +54,7 @@
     "~/Downloads"
   ],
   "persistentExternalContextPaths": [],
-  "environmentVariables": "ANTHROPIC_API_KEY=04fb5a83afea44ba87cbd2e82566237c.EkObWWaFJwCaoudx\nANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic\nANTHROPIC_DEFAULT_HAIKU_MODEL=glm-4.5-air\nANTHROPIC_DEFAULT_SONNET_MODEL= glm-5.1\nANTHROPIC_DEFAULT_OPUS_MODEL=glm-5.1",
+  "environmentVariables": "ANTHROPIC_API_KEY=8f31bd57bf6c4ae098d355d244c8a5f7.WcNH3wJlRwohZJtr\nANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic\nANTHROPIC_DEFAULT_HAIKU_MODEL=glm-4.5-air\nANTHROPIC_DEFAULT_SONNET_MODEL= glm-5.1\nANTHROPIC_DEFAULT_OPUS_MODEL=glm-5.1",
   "envSnippets": [],
   "customContextLimits": {},
   "keyboardNavigation": {
