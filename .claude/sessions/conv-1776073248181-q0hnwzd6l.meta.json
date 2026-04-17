@@ -1,0 +1,20 @@
+{
+  "id": "conv-1776073248181-q0hnwzd6l",
+  "title": "请看背景，帮我回答问题",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1776073248182,
+  "updatedAt": 1776128920985,
+  "lastResponseAt": 1776128920985,
+  "sessionId": "755258c3-7f9e-4c59-bca1-1dd3ca3d8d2d",
+  "sdkSessionId": "755258c3-7f9e-4c59-bca1-1dd3ca3d8d2d",
+  "currentNote": "临时工作.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

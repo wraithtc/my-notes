@@ -1,0 +1,20 @@
+{
+  "id": "conv-1775728813531-wgvr37pnn",
+  "title": "调研宠物行业OpenClaw使用情况",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775728813531,
+  "updatedAt": 1776073238881,
+  "lastResponseAt": 1775733819336,
+  "sessionId": "d5a51722-d801-4fe4-95a8-29b5096feed3",
+  "sdkSessionId": "d5a51722-d801-4fe4-95a8-29b5096feed3",
+  "currentNote": "技术调研/AI/宠物行业对于openclaw应用的进展跟进.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
