@@ -172,6 +172,36 @@ NVDEC 适合：4K/高帧率/多路并发/长时间视频。对 720p 30帧短视�
 - `src/pet_home_monitor/services/pet_detector.py` — FP16半精度
 - `src/pet_home_monitor/api/app.py` — CORS中间件
 
+## TensorRT 调研
+
+使用 ultralytics 内置 `model.export(format="engine")` 尝试 TensorRT 优化。
+
+**ONNX 导出成功**：`yolov8s.onnx`（42.8MB），可通过 ONNX Runtime 加载。
+
+**TensorRT engine 创建失败**：
+```
+[TRT] [E] createInferBuilder: Error Code 6: API Usage Error (CUDA initialization failure with error: 35)
+```
+原因：WSL2 环境下 TensorRT 调用 `trt.Builder(logger)` 时 CUDA 初始化失败（error code 35）。这是 WSL2 的已知限制，TensorRT 10.16.1.11 与 CUDA 12.8 / driver 573.22 在 WSL2 下存在兼容性问题。`trtexec` 命令行工具在此环境也不可用（仅 pip 安装的 TensorRT，非系统级 deb 包）。
+
+**解决方向**：在原生 Linux 或 Docker 容器（NVIDIA Container Toolkit）中执行 TensorRT 导出，然后将 `.engine` 文件拷贝回 WSL2 推理。
+
+## ONNX Runtime 调研
+
+安装 `onnxruntime-gpu`（含 CUDAExecutionProvider + TensorrtExecutionProvider），对比 ultralytics 原生推理：
+
+| 方案 | 15帧耗时 | 单帧耗时 |
+|------|---------|---------|
+| Ultralytics batch FP16 | **95.6ms** | 6.4ms |
+| ONNX Runtime sequential (batch=1) | 133.6ms | 8.9ms |
+| ONNX Runtime IOBinding | — | 8.1ms |
+
+**结论**：ONNX Runtime 在本场景无优势。
+
+- 单帧推理速度相当（~9ms），但 ultralytics 支持 batch 推理（15帧并行），ONNX 模型导出时 batch=1 固定，只能逐帧串行
+- batch 并行让 ultralytics 15帧快 40%（95ms vs 133ms）
+- 要用 ONNX Runtime batch 推理需要重新导出动态 batch ONNX（`dynamic=True`），但 ultralytics 的 batch FP16 已经够快，不值得额外引入 ONNX Runtime 依赖
+
 ## 日期
 
-2026-05-13
+2026-05-13（初版），2026-05-14（TensorRT/ONNX Runtime 调研补充）
