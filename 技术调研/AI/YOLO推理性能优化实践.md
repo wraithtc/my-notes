@@ -204,4 +204,122 @@ NVDEC 适合：4K/高帧率/多路并发/长时间视频。对 720p 30帧短视�
 
 ## 日期
 
-2026-05-13（初版），2026-05-14（TensorRT/ONNX Runtime 调研补充）
+2026-05-13（初版），2026-05-14（TensorRT/ONNX Runtime 调研补充），2026-05-15（多路并发 + NVDEC HEVC 补充）
+
+---
+
+## 多路并发推理优化（2026-05-15）
+
+### 问题
+
+多路摄像头视频并发上报时，每个视频独立调用 YOLO 推理，GPU 利用率低。两个视频串行处理 976ms，可合并为一次 GPU batch 调用降至 ~515ms。
+
+### InferenceScheduler
+
+新增 `InferenceScheduler` 服务，将多路视频的解码帧合并为一次 GPU batch 调用：
+
+```
+Camera A: cv2 decode → submit(frames_a) ─┐
+                                           ├→ detect_pets_batch(60帧) → 分发结果
+Camera B: cv2 decode → submit(frames_b) ─┘
+```
+
+- 线程安全：`threading.Lock` + `threading.Event` + `Future`
+- `batch_window_ms=50`：收到首个 submit 后等 50ms 收集更多请求，超时立即 flush
+- `max_batch_frames=120`：防 GPU OOM
+
+### DECODE_MAX_DIM 解码降分辨率
+
+ffmpeg/cv2 解码时缩放到 max_dim 以内，减少 CPU 解码和 GPU 推理开销：
+
+```
+DECODE_MAX_DIM=640: 1280x720 → 640x360
+```
+
+坐标自动缩放回原始分辨率（`scale_x = orig_w / nw`），不影响检测结果。
+
+### 进食判定阈值调整
+
+`min_dwell_seconds` 从 8s 降至 5s，提高进食事件灵敏度。
+
+### 并发 Benchmark（Tesla T4, 8核 CPU）
+
+#### H.264 1280x720（cv2 CPU 解码）
+
+| 场景 | wall时间 | v/s | 300s容量 |
+|------|---------|-----|---------|
+| 单视频 | ~500ms | — | — |
+| N=100 fps=0.5 | 26.7s | 3.7 | **1124路** |
+| N=100 fps=1 | 29.3s | 3.4 | 1023路 |
+
+---
+
+## NVDEC HEVC 硬件解码（2026-05-15）
+
+### 问题
+
+HEVC 2304x1296 视频在 Tesla T4 上 CPU 解码耗时 ~1200ms，是瓶颈。H.264 已验证 NVDEC 无优势（GPU→CPU PCIe 传输开销抵消加速），但 HEVC 解码量大，值得尝试。
+
+### 方案：PyNvVideoCodec 零拷贝 GPU 解码
+
+使用 NVIDIA PyNvVideoCodec 库（v2.1.0），NVDEC 硬件解码 HEVC 直接到 GPU 显存：
+
+```
+HEVC video → cv2 probe codec → PyNvVideoCodec NVDEC decode (GPU)
+  → batch GPU ops (stack + RGB→BGR flip + permute)
+  → 一次 GPU→CPU 传输
+  → cv2 resize (CPU)
+  → detect_pets_batch / InferenceScheduler (现有路径)
+H.264 video → cv2 路径（不改动）
+```
+
+### 关键设计
+
+1. **按编码自动选择**：cv2 探测 FOURCC，HEVC（`hevc`/`hvc1`/`hev1`/`HEVC`/`H265`/`h265`）走 GPU，H.264 走 cv2
+2. **批量 GPU 操作**：30 帧 stack → RGB→BGR flip → permute → **一次** GPU→CPU 传输（252ms），比逐帧传输+转换（960ms）快 3.8x
+3. **CPU resize**：先传 uint8 到 CPU（快），再用 cv2.resize（直接处理 uint8，不需要 float 转换）
+4. **优雅降级**：PyNvVideoCodec 未安装或解码失败 → 自动 fallback 到 cv2
+
+### 优化过程
+
+| 尝试 | decode 耗时 | 问题 |
+|------|-----------|------|
+| cv2 软解（baseline） | 1569ms | CPU 瓶颈 |
+| `get_batch_frames_by_index()`（随机访问） | 2332ms | HEVC 随机 seek keyframe 很慢 |
+| 顺序迭代 + 逐帧 float32 resize | 3332ms | float32 全分辨率 tensor 太大 |
+| 顺序迭代 + 逐帧 uint8 传 CPU + cv2 resize | 2660ms | 逐帧 GPU→CPU 传输开销 |
+| **顺序迭代 + batch GPU ops + 一次传输** | **761ms** | **最终方案** |
+
+### HEVC Benchmark
+
+| 场景 | decode | infer | total | 300s容量 |
+|------|--------|-------|-------|---------|
+| HEVC 单视频 GPU decode | 1034ms | 109ms | 1157ms | — |
+| HEVC 单视频 cv2（对比） | 1569ms | 110ms | 1779ms | — |
+| HEVC N=20 fps=0.5 GPU decode | 2637ms | 619ms | — | **933路** |
+| **混合 50H+10E fps=0.5** | H:2527 E:1325 | H:478 E:789 | — | **1164路** |
+
+### 配置
+
+| 参数 | 默认值 | Env Var |
+|------|--------|---------|
+| gpu_decode_enabled | false | `GPU_DECODE_ENABLED` |
+| decode_max_dim | 0 | `DECODE_MAX_DIM` |
+| batch_window_ms | 50 | `INFERENCE_BATCH_WINDOW_MS` |
+| max_batch_frames | 120 | `INFERENCE_MAX_BATCH_FRAMES` |
+
+Docker 需 `NVIDIA_DRIVER_CAPABILITIES=compute,utility,video` 启用 NVDEC。
+
+### 新增/修改文件
+
+- `src/pet_home_monitor/services/gpu_decoder.py` — NVDEC decode + batch GPU ops
+- `src/pet_home_monitor/services/inference_scheduler.py` — 多路 batch 合并推理
+- `src/pet_home_monitor/services/video_processor.py` — FOURCC 检测 + HEVC GPU/cv2 自动选择
+- `src/pet_home_monitor/config.py` — `gpu_decode_enabled`, `decode_max_dim`, scheduler 配置
+
+### 踩坑
+
+1. **FOURCC 大小写敏感**：cv2 报告的 `hevc`（小写，值 1668703592）与 `HEVC`（大写，值 1129727304）是不同的 fourcc int，必须都加入匹配集合
+2. **SimpleDecoder 顺序比随机快**：`get_batch_frames_by_index()` 做 random access seek，HEVC keyframe 间隔大导致 seek 开销巨大。顺序迭代全 450 帧选 30 帧（611ms）比随机选 30 帧（539ms + seek 开销）更快
+3. **float32 全分辨率 resize 慢**：2304×1296 uint8 转 float32 = 36MB/帧，F.interpolate 在这样大的 float tensor 上很慢。改为 uint8 传 CPU 再 cv2.resize
+4. **batch GPU→CPU 传输**：30 帧 stack + flip + permute → 一次传输（252ms），比 30 次单独传输+numpy 转换（960ms）快 3.8x
