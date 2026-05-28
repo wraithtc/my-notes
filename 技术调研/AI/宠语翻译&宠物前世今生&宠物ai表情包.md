@@ -315,7 +315,211 @@ audio = model.generate(prompt)
 - 需要大量**标注数据**进行模型训练/微调
 - 跨物种沟通的科学性尚未得到充分验证
 
-### 1.8 参考资源
+### 1.8 模型动物情绪分析能力实际评估
+
+> **⚠️ 重要修正：经深入调研，笔记中推荐的这些开源模型，没有一个能"开箱即用"地做猫狗声音情绪分析。**
+
+#### 总览评分表
+
+| 模型/方案 | 动物声音识别 | 动物情绪分析 | 猫狗专项 | 证据强度 |
+|---|---|---|---|---|
+| **Qwen2-Audio** | ⚠️ 弱支持 | ❌ 无证据 | ❌ 无 | 有基准数据 |
+| **SenseVoice** | ❌ 不支持 | ❌ 仅人类语音情绪 | ❌ 无 | 有论文验证 |
+| **Whisper (微调)** | ⚠️ 需要微调 | ❌ 需从零训练 | ❌ 无 | 社区验证 |
+| **Audio Flamingo** | ⚠️ 通用分类 | ❌ 仅人类情绪 | ❌ 无 | 有基准数据 |
+| **Perch 2.0** | ✅ 15000+物种 | ❌ 物种级非情绪级 | ⚠️ 不含猫狗 | 有论文 (SOTA) |
+| **密歇根大学模型** | ✅ 狗叫声专用 | ✅ 玩耍 vs 攻击 | ✅ 仅狗 | 有论文 (LREC-COLING 2024) |
+| **CLAP** | ⚠️ 零样本分类 | ❌ 无专项能力 | ❌ 无 | 有 Nature 论文 |
+
+---
+
+#### 1）Qwen2-Audio — 非语音是明确短板
+
+**数据来源：** [Qwen2-Audio 技术报告](https://arxiv.org/html/2407.10759v1)、[MMAU 基准 (ICLR 2025)](https://arxiv.org/html/2410.19168v1)、[SAKURA 论文 (Interspeech 2025)](https://www.isca-archive.org/interspeech_2025/yang25g_interspeech.pdf)
+
+| 指标 | 数据 |
+|---|---|
+| MMAU 总体准确率 | **52.50%**（人类基准 82%） |
+| 非语音理解得分 | **49.9**（低于 Audio-Reasoner 的 53.9） |
+| 语音情绪识别（人类） | 55.3%（Meld 数据集） |
+| 感知错误率（声音任务） | **55%** 的错误来源于"没听对" |
+| 音频长度限制 | 30 秒以内 |
+
+**关键事实：**
+
+- 音频编码器基于 **Whisper-large-v3 初始化**，使用 40ms 帧率、128 通道 mel 频谱，为**人类语音**优化的架构，无法很好地捕捉动物叫声更宽的频率范围和不同的时序模式
+- MMAU 中唯一直接涉及动物的测试题是："狗叫声可能由什么引起？"——但该基准没有公布该题的单独准确率
+- **没有任何官方文档、论文或 demo 展示过 Qwen2-Audio 分析猫狗情绪的能力**
+- SAKURA 论文虽然提到"Qwen2-Audio 在识别动物声音方面优于其他大型音频语言模型"，但这只是**相对于其他 LALM 而言**，绝对水平仍然很低
+- AIR-Bench Sound 子集得分 6.99（SOTA），但该子集来源于 Clotho 通用音频标注，非专项动物声音
+
+**结论：** 能识别音频中"有动物在叫"，但**无法判断动物的情绪状态**。对猫狗情绪分析基本不可用。
+
+---
+
+#### 2）SenseVoice — 情绪识别强，但仅限人类
+
+**数据来源：** [SenseVoice GitHub](https://github.com/FunAudioLLM/SenseVoice)、[FunAudioLLM 论文](https://arxiv.org/html/2407.04051v1)、[HuggingFace Model Card](https://huggingface.co/FunAudioLLM/SenseVoiceSmall)
+
+| 能力 | 详情 |
+|---|---|
+| 人类语音情绪识别 | ✅ 声称超越当前最佳模型 |
+| 音频事件检测 | ✅ 掌声、笑声、BGM、咳嗽等**人类交互场景**声音 |
+| 动物声音识别 | ❌ **无任何支持** |
+| 推理速度 | 比 Whisper 快 15 倍 |
+
+**关键事实：**
+
+- SenseVoice 的音频事件检测范围是**人类交互场景**中的常见声音（掌声、笑声、背景音乐等）
+- 论文和技术文档中**完全没有提及动物声音分类或动物情绪分析**
+- 它的情绪识别是**语音情绪识别 (SER)**，针对的是人类说话时的情感（高兴、悲伤、愤怒等），不是动物叫声的情绪
+
+> **⚠️ 修正：** 笔记中此前将 SenseVoice 标注为"宠物声音情感分析适用场景"，这一描述**不准确**。SenseVoice 的情绪识别完全局限于人类语音，不能直接用于宠物声音分析。
+
+---
+
+#### 3）Whisper (OpenAI) — 语音模型，动物声音需大幅改造
+
+**数据来源：** [Whisper 零样本音频分类讨论](https://github.com/openai/whisper/discussions/673)、[微调 Whisper 用于音频分类](https://www.daniweb.com/programming/computer-science/tutorials/540802/fine-tuning-openai-whisper-model-for-audio-classification-in-pytorch)
+
+**关键事实：**
+
+- Whisper 是**纯语音识别模型**，编码器-解码器架构、分词器、损失函数全部围绕语音设计
+- 社区发现其对**环境声音有一定的零样本识别能力**（不微调也能识别一些狗叫、猫叫等）
+- 但要用它做动物情绪分类，需要完全替换分类头 + 收集大量标注数据，实质上是"借用"Whisper 的编码器做特征提取
+
+**结论：** 与其微调 Whisper，不如直接用 **AST (Audio Spectrogram Transformer)** 或 **PANNs** 这类专为音频事件分类设计的模型。
+
+---
+
+#### 4）Audio Flamingo 系列 — 通用音频理解，动物情绪无专项
+
+**数据来源：** [Audio Flamingo (ICML 2024)](https://dl.acm.org/doi/10.5555/3692070.3693076)、[Audio Flamingo 3 (2025)](https://arxiv.org/html/2507.08128v1)
+
+| 版本 | 时间 | 特点 |
+|---|---|---|
+| Audio Flamingo | ICML 2024 | 少样本音频理解、对话能力 |
+| Audio Flamingo 2 | ICML 2025 | 长音频理解，LongAudioBench |
+| Audio Flamingo 3 | 2025 | 完全开源，20+ 基准 SOTA |
+
+**关键事实：**
+
+- 在 **AudioSet** 上评估过音频事件分类（AudioSet 包含 "Dog bark"、"Cat meow" 等动物声音类别）
+- 在 **MELD** 数据集上评估过情绪识别（但这是**人类对话情绪**）
+- **没有任何动物情绪分析相关的基准测试或论文实验**
+
+**结论：** 能识别音频中的动物声音类型（狗叫 vs 猫叫），但与 Qwen2-Audio 类似，**无法判断情绪状态**。
+
+---
+
+#### 5）Perch 2.0 (Google DeepMind) — 物种分类之王，但不做情绪
+
+**数据来源：** [Perch 2.0 论文](https://arxiv.org/html/2508.04665v1)、[DeepMind Blog](https://deepmind.google/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/)
+
+| 能力 | 详情 |
+|---|---|
+| 物种分类 | ✅ **~15,000 物种**，SOTA |
+| 覆盖范围 | 鸟类、蛙类、昆虫、鲸鱼、鱼类 |
+| 叫声类型识别 | ✅ 支持叫声类型和方言区分 |
+| 个体识别 | ✅ 可识别同种不同个体 |
+| 情绪分析 | ❌ **不支持** |
+| 猫狗覆盖 | ❌ **主要面向野生动物，不含宠物** |
+
+**关键事实：**
+
+- 训练数据来源是**野生动物录音**，核心任务是"这段音频是什么物种发出的"
+- 模型输出的 embedding 可以用于下游任务迁移，理论上**可以微调做情绪分类**，但需要自己构建数据集和训练流程
+- 兽医领域正在探索将其用于动物福利监测，但这是**未来方向**而非已有功能
+
+**结论：** 对猫狗情绪分析**完全不适用**。这是一个野生动物物种识别模型，不是宠物情绪分析工具。
+
+---
+
+#### 6）密歇根大学狗声解码模型 — 目前最接近的学术成果 ⭐
+
+**数据来源：** [论文 (LREC-COLING 2024)](https://aclanthology.org/2024.lrec-main.1432.pdf)、[arXiv 预印本](https://arxiv.org/html/2404.18739v1)、[密歇根大学新闻](https://cse.engin.umich.edu/stories/using-ai-to-decode-dog-vocalizations)
+
+| 能力 | 详情 |
+|---|---|
+| 情绪/意图分类 | ✅ **玩耍 (playful) vs 攻击 (aggressive)** |
+| 年龄识别 | ✅ 可从叫声判断犬龄 |
+| 性别识别 | ✅ 可从叫声判断性别 |
+| 品种识别 | ✅ 可从叫声判断品种 |
+| 技术路线 | 人类语音预训练模型 → 跨物种迁移学习 |
+| 猫叫声支持 | ❌ 仅覆盖狗 |
+
+**关键事实：**
+
+- 核心发现：**人类语音预训练模型可以跨物种迁移到狗叫声分析**，这说明语音和犬吠之间存在共通的声学模式
+- 目前分类粒度较粗（主要是玩耍 vs 攻击），距离精细情绪分析（饥饿、焦虑、恐惧、快乐等多分类）还有差距
+- **仅覆盖狗，不包含猫**
+
+**结论：** 笔记中推荐的模型里**唯一经过学术验证可以分析动物情绪的**，但目前只做了二分类（玩耍 vs 攻击），精细度不够商业化需求。
+
+---
+
+#### 7）商业产品实际能力
+
+| 产品 | 声称能力 | 科学验证 |
+|---|---|---|
+| **Traini** | 94% 情绪分类准确率，120+ 犬种 | ❌ **无独立验证**，公司自述 |
+| **MeowTalk** | 将猫叫分为"饿了"、"害怕"等意图类别 | ⚠️ 使用众包数据训练，准确率未公开 |
+| **Pattern** | 实时分析猫叫，40 个分类 | ❌ 无公开论文 |
+
+---
+
+#### 8）猫狗情绪分析的学术前沿（2024-2025）
+
+**猫叫情绪分类：**
+- [JL-TFMSFNet](https://www.sciencedirect.com/science/article/abs/pii/S0957417424014878)（Expert Systems with Applications, 2024）：专门针对家猫声音情绪识别的深度学习方法
+- [猫情绪声音识别系统](https://dl.acm.org/doi/10.1145/3768184.3768239)（ACM 2024/2025）：使用 GMM + MFCC 的经典方法
+- [深度学习预测猫情绪](https://www.researchgate.net/publication/400653451_Leveraging_Deep_Learning_to_Predict_Cat_Emotions_Using_Audio)（Springer 2024）
+
+**狗叫情绪分类：**
+- 密歇根大学研究是目前最强学术成果（见上文）
+- [人类对猫叫的分类能力研究](https://pmc.ncbi.nlm.nih.gov/articles/PMC7765146/) 提供了人类基准对比
+
+**学术界的共识挑战：**
+- 标注数据集**极小**（猫叫标注数据通常只有数百到数千条）
+- 不同个体猫狗的叫声差异**极大**
+- 情绪分类标准**缺乏统一**（"快乐" vs "满足" vs "期待" 如何区分？）
+
+---
+
+#### 9）修正后的技术选型建议
+
+**如果真要做宠物情绪分析产品，推荐路径：**
+
+```
+第一步：基础模型选择
+├── 特征提取 Backbone：PANNs 或 AST（Audio Spectrogram Transformer）
+│   而非 Qwen2-Audio 或 Whisper（二者均为语音优化架构）
+└── 参考密歇根大学方法：Wav2Vec2 跨物种迁移学习
+    ↓
+第二步：数据集构建
+├── 收集猫狗叫声音频 + 情绪标签（参考 JL-TFMSFNet 方法）
+├── 每个情绪类别至少 500+ 样本
+└── 情绪类别从粗粒度开始：快乐 / 不安 / 需求 / 警告
+    ↓
+第三步：模型训练
+├── 基于 PANNs/AST backbone + 自定义分类头
+├── 或参考密歇根大学方案：人类语音预训练模型 + 跨物种微调
+└── 逐步扩展到更细粒度的情绪分类
+    ↓
+第四步：轻量化部署
+├── 蒸馏/量化模型 → 端侧部署
+└── 结合音频大模型（如 Qwen2-Audio）做文案生成（非情绪判断）
+```
+
+**关键修正：**
+- Qwen2-Audio 适合做**最终文案生成层**（将分类结果翻译为自然语言），而非前端情绪分类
+- SenseVoice 不适用于宠物场景，应从推荐中移除或明确标注"仅限人类语音"
+- Perch 2.0 不适用于猫狗，应明确标注"面向野生动物物种识别"
+- 密歇根大学模型是唯一有动物情绪分类学术验证的方案，应提升优先级
+
+---
+
+### 1.9 参考资源
 
 **宠物叫声识别**：
 - [Qwen2-Audio GitHub](https://github.com/QwenLM/Qwen2-Audio)
@@ -331,6 +535,15 @@ audio = model.generate(prompt)
 **学术研究**：
 - [Wild Animal Initiative - AI Animal Translation](https://www.wildanimalinitiative.org/blog/ai-animal-translation)
 - [Nature - AI Animal Communication](https://www.nature.com/articles/d41586-025-02917-9)
+
+**动物情绪分析评估新增参考**：
+- [Qwen2-Audio 技术报告](https://arxiv.org/html/2407.10759v1)
+- [MMAU 基准 (ICLR 2025)](https://arxiv.org/html/2410.19168v1)
+- [密歇根大学狗声解码论文 (LREC-COLING 2024)](https://aclanthology.org/2024.lrec-main.1432.pdf)
+- [Perch 2.0 论文](https://arxiv.org/html/2508.04665v1)
+- [JL-TFMSFNet 猫叫情绪识别 (2024)](https://www.sciencedirect.com/science/article/abs/pii/S0957417424014878)
+- [CLAP 零样本生物声学 (Nature 2025)](https://www.nature.com/articles/s41598-025-89153-3)
+- [Audio Flamingo 3 (2025)](https://arxiv.org/html/2507.08128v1)
 
 ---
 
@@ -787,3 +1000,4 @@ MVP阶段：LivePortrait 一键启动包（支持动物模式）
 - 2026-03-18: 初始技术调研完成
 - 2026-03-18: 补充开源模型详细信息（Qwen2-Audio、Qwen2.5-VL、InternVL、DeepSeek-VL2、LivePortrait等）
 - 2026-03-18: 宠语翻译调整为纯声音识别方案
+- 2026-05-28: 新增「1.8 模型动物情绪分析能力实际评估」章节，基于论文/基准数据逐一评估各模型对猫狗声音情绪分析的实际支持能力，修正此前对 SenseVoice、Perch 2.0 等模型能力的过乐观描述，补充猫狗情绪分析学术前沿和修正后的技术选型建议
