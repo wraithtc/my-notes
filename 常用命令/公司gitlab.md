@@ -9,3 +9,10 @@ AVd36vk$
 情绪识别：
 4. 输入：宠语视频、音频
 5. 输出：情绪标签、互动建议
+6.   3. 再进 diskpart 重新来：
+
+  select vdisk file="D:\wsl\ubuntu\ext4.vhdx"
+  attach vdisk readonly
+  compact vdisk
+  detach vdisk
+  exit
